@@ -128,7 +128,27 @@ h2 { font-size: clamp(29px, 3.35vw, 50px); font-weight: 600; letter-spacing: -.0
 .ecg { width: 95%; height: 130px; margin-top: 35px; overflow: visible; }
 .ecg-grid { stroke: #7dbab612; stroke-width: 1; fill: none; }
 .ecg-trace { stroke: var(--cyan); stroke-width: 2; fill: none; filter: drop-shadow(0 0 5px #7dbab655); stroke-dasharray: 1200; animation: heartbeat 4s linear infinite; }
-.transit-map { width: 88%; max-height: 200px; margin-top: 12px; fill: none; }
+.secret-front { stroke: var(--cyan); fill: none; filter: drop-shadow(0 0 5px #7dbab655); }
+.secret-frame { fill: #101b1dd9; stroke-width: 1; }
+.secret-corners { stroke-width: 2; }
+.secret-front text { font-family: var(--mono); font-size: 43px; font-weight: 400; letter-spacing: 2px; text-anchor: middle; stroke-width: .9; stroke-linejoin: round; }
+.transit-map { width: 95%; max-height: 210px; margin-top: 12px; fill: none; }
+.network-console { --console-green: #d2ef6c; font-family: var(--mono); filter: drop-shadow(0 0 3px #c8ea5426); }
+.console-body { fill: #101219ed; stroke: #d2ef6c80; stroke-width: 1; }
+.console-frame { stroke: var(--console-green); stroke-width: 1; }
+.network-console text { fill: var(--console-green); }
+.console-brand { font-size: 11px; letter-spacing: 1px; }
+.console-label { font-size: 8px; letter-spacing: .3px; }
+.console-time { font-size: 12px; }
+.console-progress { stroke: var(--console-green); stroke-width: 3; }
+.console-buffer { stroke: #d2ef6c80; stroke-width: .7; stroke-dasharray: 3 2; }
+.console-bar { fill: var(--console-green); }
+.network-console .console-heading { fill: #172018; font-size: 10px; letter-spacing: 1px; }
+.console-selection { fill: #6d718930; }
+.console-code { font-size: 12px; letter-spacing: 1.9px; }
+.console-rule { stroke: #d2ef6c40; stroke-width: .6; }
+.network-console .console-sequence text { fill: #d1d8c7; font-size: 11px; }
+.map-underlay { stroke: #0b0d0e; stroke-width: 13; stroke-linecap: square; stroke-linejoin: round; }
 .map-floor { stroke: #626d70; stroke-width: 7; }
 .map-route { stroke: var(--cyan); stroke-width: 1.5; stroke-dasharray: 5 7; animation: route 3s linear infinite; }
 .map-nodes { stroke: var(--cyan); fill: #192527; stroke-width: 2; }
