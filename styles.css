@@ -179,9 +179,9 @@ h2 { font-size: clamp(29px, 3.35vw, 50px); font-weight: 600; letter-spacing: -.0
 .route-heading { position: absolute; left: 30px; top: 69px; z-index: 3; }
 .route-heading > .mono { font-size: 7px; color: #b8bd89; }
 .route-heading strong { display: block; margin-top: 9px; font-size: 22px; font-weight: 400; letter-spacing: .13em; color: #d8d9c8; }
-.transit-map { position: absolute; right: 3%; bottom: 60px; width: 93%; height: 253px; fill: none; overflow: visible; }
-.network-console { --console-green: #c8cb82; font-family: var(--mono); filter: drop-shadow(0 16px 12px #0008); }
-.console-body { fill: #1c2026ed; stroke: #c8cb8280; stroke-width: 1; }
+.transit-map { position: absolute; right: 3%; bottom: 54px; width: 93%; height: 266px; fill: none; overflow: visible; }
+.network-console { --console-green: #d7ed92; font-family: var(--mono); filter: drop-shadow(0 16px 12px #0008) drop-shadow(0 0 4px #c6e67229); }
+.console-body { fill: #11191bf5; stroke: #d7ed92bb; stroke-width: 1.2; }
 .console-frame { stroke: var(--console-green); stroke-width: 1; }
 .network-console text { fill: var(--console-green); }
 .console-brand { font-size: 11px; letter-spacing: 1px; }
@@ -191,8 +191,8 @@ h2 { font-size: clamp(29px, 3.35vw, 50px); font-weight: 600; letter-spacing: -.0
 .console-buffer { stroke: #d2ef6c80; stroke-width: .7; stroke-dasharray: 3 2; }
 .console-bar { fill: var(--console-green); }
 .network-console .console-heading { fill: #172018; font-size: 10px; letter-spacing: 1px; }
-.console-selection { fill: #93958529; }
-.console-code { font-size: 12px; letter-spacing: 1.9px; }
+.console-selection { fill: #c6e67224; }
+.console-code { font-size: 13px; font-weight: 600; letter-spacing: 1.9px; }
 .console-rule { stroke: #d2ef6c40; stroke-width: .6; }
 .network-console .console-sequence text { fill: #d1d8c7; font-size: 11px; }
 .map-underlay { stroke: #0b0d0e; stroke-width: 13; stroke-linecap: square; stroke-linejoin: round; }
