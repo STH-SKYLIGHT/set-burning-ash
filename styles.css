@@ -179,7 +179,7 @@ h2 { font-size: clamp(29px, 3.35vw, 50px); font-weight: 600; letter-spacing: -.0
 .route-heading { position: absolute; left: 30px; top: 69px; z-index: 3; }
 .route-heading > .mono { font-size: 7px; color: #b8bd89; }
 .route-heading strong { display: block; margin-top: 9px; font-size: 22px; font-weight: 400; letter-spacing: .13em; color: #d8d9c8; }
-.transit-map { position: absolute; right: 3%; bottom: 54px; width: 93%; height: 266px; fill: none; overflow: visible; }
+.transit-map { position: absolute; right: 3%; bottom: 50px; width: 93%; height: 286px; fill: none; overflow: visible; }
 .network-console { --console-green: #d7ed92; font-family: var(--mono); filter: drop-shadow(0 16px 12px #0008) drop-shadow(0 0 4px #c6e67229); }
 .console-body { fill: #11191bf5; stroke: #d7ed92bb; stroke-width: 1.2; }
 .console-frame { stroke: var(--console-green); stroke-width: 1; }
@@ -196,7 +196,7 @@ h2 { font-size: clamp(29px, 3.35vw, 50px); font-weight: 600; letter-spacing: -.0
 .console-rule { stroke: #d2ef6c40; stroke-width: .6; }
 .network-console .console-sequence text { fill: #d1d8c7; font-size: 11px; }
 .map-underlay { stroke: #0b0d0e; stroke-width: 13; stroke-linecap: square; stroke-linejoin: round; }
-.route-glass { fill: #151e27e8; stroke: #9faeb180; stroke-width: 1; }
+.route-glass { fill: #151e2733; stroke: #9faeb180; stroke-width: 1; }
 .route-legend { fill: #afbfbd; font-family: var(--mono); font-size: 10px; letter-spacing: 1.4px; }
 .map-floor { stroke: #626d70; stroke-width: 7; }
 .map-route { stroke: var(--cyan); stroke-width: 1.5; stroke-dasharray: 5 7; animation: route 3s linear infinite; }
@@ -363,7 +363,7 @@ h2 { font-size: clamp(29px, 3.35vw, 50px); font-weight: 600; letter-spacing: -.0
   .archive-progress > i { width: 7px; }
   .route-heading { left: 20px; top: 73px; }
   .route-heading strong { font-size: 21px; }
-  .transit-map { right: 4%; width: 91%; height: 226px; bottom: 57px; }
+  .transit-map { right: 4%; width: 91%; height: 246px; bottom: 47px; }
 }
 @container (max-width: 320px) {
   .secret-title { font-size: 45px; }
