@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="460" viewBox="0 0 1000 460" fill="none">
+  <defs>
+    <linearGradient id="case" x1="590" y1="0" x2="930" y2="440" gradientUnits="userSpaceOnUse"><stop stop-color="#37424b"/><stop offset=".2" stop-color="#141b21"/><stop offset=".6" stop-color="#1e272e"/><stop offset="1" stop-color="#090d11"/></linearGradient>
+    <linearGradient id="glass" x2="1" y2="1"><stop stop-color="#54707b" stop-opacity=".22"/><stop offset=".45" stop-color="#0a0e13"/><stop offset="1" stop-color="#344451" stop-opacity=".4"/></linearGradient>
+    <linearGradient id="beam"><stop stop-color="#e3c47b" stop-opacity="0"/><stop offset=".83" stop-color="#e3c47b" stop-opacity=".5"/><stop offset="1" stop-color="#fff3cc"/></linearGradient>
+    <pattern id="slots" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M0 1H8" stroke="#04070b" stroke-width="4"/><path d="M0 4H8" stroke="#53606a" stroke-opacity=".2"/></pattern>
+    <pattern id="meter" width="13" height="6" patternUnits="userSpaceOnUse"><path d="M1 1H10" stroke="#d4b672" stroke-width="3"/></pattern>
+    <pattern id="ticks" width="9" height="25" patternUnits="userSpaceOnUse"><path d="M1 0V17" stroke="#86969e" stroke-opacity=".45"/></pattern>
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".78" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>
+  </defs>
+  <path fill="#0b1117" d="M0 0H1000V460H0z"/>
+  <g transform="translate(12 75) rotate(-7 230 130)">
+    <rect width="458" height="298" rx="4" fill="#111b24" stroke="#657880" stroke-opacity=".3"/>
+    <path d="M12 18H446M12 264H446" stroke="#77868e" stroke-opacity=".3"/>
+    <g font-family="monospace" font-size="9" letter-spacing="2" fill="#899a9e"><text x="24" y="43">SPECTRUM ANALYZER / TYPE IV</text><text x="26" y="253">L</text><text x="246" y="253">R</text><text x="26" y="282">STEREO</text><text x="300" y="282">TAPE / 001</text></g>
+    <rect x="28" y="60" width="396" height="142" fill="url(#meter)" opacity=".1"/>
+    <path d="M28 192V172H53V192ZM67 192V152H92V192ZM106 192V116H131V192ZM145 192V74H170V192ZM184 192V97H209V192ZM223 192V140H248V192ZM262 192V166H287V192ZM301 192V138H326V192ZM340 192V113H365V192ZM379 192V151H404V192Z" fill="url(#meter)" opacity=".7"/>
+    <path d="M26 213H424" stroke="#596c74" stroke-opacity=".45"/>
+    <rect x="43" y="236" width="165" height="22" fill="url(#ticks)"/><rect x="263" y="236" width="160" height="22" fill="url(#ticks)"/>
+    <path d="M43 248H173M263 248H369" stroke="#9fc2c6" stroke-opacity=".55" stroke-width="8"/>
+  </g>
+  <g transform="translate(603 -64) rotate(-13 172 245)">
+    <rect width="340" height="520" rx="13" fill="url(#case)" stroke="#657582" stroke-opacity=".5" stroke-width="2"/>
+    <rect x="13" y="14" width="314" height="490" rx="7" stroke="#657582" stroke-opacity=".3"/>
+    <rect x="24" y="32" width="292" height="98" rx="4" fill="url(#slots)"/>
+    <rect x="22" y="146" width="296" height="200" rx="7" fill="#080d12" stroke="#6c8191" stroke-opacity=".45" stroke-width="3"/>
+    <rect x="37" y="160" width="266" height="171" rx="5" fill="url(#glass)" stroke="#8097a5" stroke-opacity=".25"/>
+    <path d="M52 178H288V217H52Z" fill="#a5b4b8" opacity=".28"/>
+    <g font-family="monospace" fill="#b1bdc2"><text x="65" y="197" font-size="9" letter-spacing="1.5">SET / FIELD RECORDING</text><text x="67" y="311" font-size="26" font-weight="bold">60</text><text x="109" y="311" font-size="8">MIN / ARCHIVE</text></g>
+    <rect x="73" y="236" width="196" height="47" rx="22" fill="#080b0e" stroke="#6c7c87" stroke-opacity=".45"/>
+    <g stroke="#687780" stroke-width="3"><circle cx="101" cy="259" r="16"/><circle cx="242" cy="259" r="16"/><path d="M101 242V251M101 267V275M85 259H93M109 259H117M242 242V251M242 267V275M226 259H234M250 259H258"/></g>
+    <path d="M129 252H214M129 264H214" stroke="#4e5e68" stroke-width="2"/>
+    <path d="M23 370H316M23 392H316" stroke="#81949d" stroke-opacity=".35"/>
+    <g font-family="monospace" font-size="7" fill="#8399a7"><text x="28" y="384">REC</text><text x="82" y="384">PLAY</text><text x="139" y="384">REW</text><text x="196" y="384">STOP</text><text x="254" y="384">PAUSE</text></g>
+    <g stroke="#677986" stroke-opacity=".3" fill="#1d2934"><path d="M24 398H70V477H24Z"/><path d="M77 398H123V477H77Z"/><path d="M130 398H176V477H130Z"/><path d="M183 398H229V477H183Z"/><path d="M236 398H282V477H236Z"/></g>
+    <path d="M32 446H61V470H32Z" fill="#a44830" opacity=".65"/>
+    <g fill="#b3c6ce" opacity=".5"><circle cx="27" cy="18" r="2"/><circle cx="314" cy="18" r="2"/><circle cx="27" cy="496" r="2"/><circle cx="314" cy="496" r="2"/></g>
+  </g>
+  <path d="M0 296L1000 253" stroke="url(#beam)" stroke-width="1.5"/>
+  <path fill="#9cabb2" opacity=".055" filter="url(#grain)" d="M0 0H1000V460H0z"/>
+</svg>
