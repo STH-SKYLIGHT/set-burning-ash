@@ -456,6 +456,7 @@ h2 { font-size: clamp(29px, 3.35vw, 50px); font-weight: 600; letter-spacing: -.0
 .pointer-reticle { position: fixed; z-index: 95; top: 0; left: 0; width: 30px; height: 30px; pointer-events: none; opacity: 0; transition: opacity .2s; }
 .pointer-reticle > i { position: absolute; inset: -15px 15px 15px -15px; width: 30px; height: 30px; border: 1px solid #ed3e5199; transition: transform .25s var(--ease), border-color .25s; clip-path: polygon(0 0, 30% 0, 30% 1px, 70% 1px, 70% 0, 100% 0, 100% 30%, calc(100% - 1px) 30%, calc(100% - 1px) 70%, 100% 70%, 100% 100%, 70% 100%, 70% calc(100% - 1px), 30% calc(100% - 1px), 30% 100%, 0 100%, 0 70%, 1px 70%, 1px 30%, 0 30%); }
 .pointer-reticle.is-on { opacity: 1; }
+.pointer-reticle::after { content: ""; position: absolute; left: -1px; top: -1px; width: 3px; height: 3px; background: var(--accent); }
 .pointer-reticle.is-hot > i { transform: rotate(45deg) scale(1.35); border-color: #efc0c7; }
 .pointer-reticle.is-down > i { transform: scale(.65); }
 body.archive-open { overflow: hidden; }
@@ -499,6 +500,9 @@ body.archive-open { overflow: hidden; }
   .archive-content { padding: 28px 20px 60px; }
   .archive-content .module-copy { padding: 28px 0; }
   .archive-content .world-frame figcaption { gap: 18px; }
+}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  html.has-reticle, html.has-reticle * { cursor: none !important; }
 }
 @media (pointer: coarse), (prefers-reduced-motion: reduce) { .pointer-reticle { display: none; } }
 @media (prefers-reduced-motion: reduce) {

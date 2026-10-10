@@ -3,6 +3,7 @@
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+  const reticle = document.querySelector('.pointer-reticle');
   const storage = {
     get(key, session = false) {
       try { return (session ? sessionStorage : localStorage).getItem(key); } catch { return null; }
@@ -50,11 +51,11 @@
     musicButtons.forEach((button) => button.setAttribute('aria-pressed', String(!music.paused && !music.error)));
   }
   async function playMusic() {
-    if (!musicWanted || document.hidden || playPending || !music.paused) return;
+    if (!musicWanted || playPending || !music.paused) return;
     playPending = true;
     try {
       await music.play();
-      if (!musicWanted || document.hidden) music.pause();
+      if (!musicWanted) music.pause();
     } catch { /* Playback may require a user gesture; the switch can retry. */ }
     finally { playPending = false; updateMusic(); }
   }
@@ -74,10 +75,6 @@
   }, { passive: true });
   document.addEventListener('keydown', (event) => {
     if (['Enter', ' '].includes(event.key) && !event.target.closest('.music-toggle')) playMusic();
-  });
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden) music.pause();
-    else playMusic();
   });
   playMusic();
 
@@ -178,6 +175,7 @@
       document.body.classList.add('archive-open');
       dialog.showModal();
     }
+    dialog.append(reticle);
     dialog.scrollTop = 0;
     animateIn(archiveContent, 40);
   }
@@ -185,6 +183,7 @@
   function hideArchive() {
     if (!dialog.open) return;
     dialog.close();
+    document.body.append(reticle);
     document.body.classList.remove('archive-open');
     window.scrollTo({ top: homeScroll, behavior: 'instant' });
     archiveTrigger?.focus({ preventScroll: true });
@@ -312,7 +311,6 @@
     }
   });
 
-  const reticle = document.querySelector('.pointer-reticle');
   const heroArt = document.querySelector('.hero-art');
   let pointerFrame = 0;
   let pointerX = 0;
@@ -328,18 +326,29 @@
     }
   }
   document.addEventListener('pointermove', (event) => {
-    if (!finePointer.matches || reduceMotion.matches || event.pointerType === 'touch' || dialog.open) return;
+    if (!finePointer.matches || reduceMotion.matches || event.pointerType === 'touch') {
+      hideReticle();
+      return;
+    }
     pointerX = event.clientX;
     pointerY = event.clientY;
     pointerTarget = event.target;
     reticle.classList.add('is-on');
+    document.documentElement.classList.add('has-reticle');
     reticle.classList.toggle('is-hot', Boolean(event.target.closest('a, button')));
     if (!pointerFrame) pointerFrame = requestAnimationFrame(drawPointer);
   }, { passive: true });
   document.addEventListener('pointerdown', () => reticle.classList.add('is-down'), { passive: true });
   document.addEventListener('pointerup', () => reticle.classList.remove('is-down'), { passive: true });
-  document.documentElement.addEventListener('pointerleave', () => reticle.classList.remove('is-on'));
-  window.addEventListener('blur', () => reticle.classList.remove('is-on', 'is-down'));
+  function hideReticle() {
+    reticle.classList.remove('is-on', 'is-down', 'is-hot');
+    document.documentElement.classList.remove('has-reticle');
+  }
+  document.documentElement.addEventListener('pointerleave', hideReticle);
+  document.addEventListener('pointercancel', hideReticle);
+  window.addEventListener('blur', hideReticle);
+  finePointer.addEventListener('change', hideReticle);
+  reduceMotion.addEventListener('change', hideReticle);
 
   if ('IntersectionObserver' in window && !reduceMotion.matches) {
     const observer = new IntersectionObserver((entries) => {
